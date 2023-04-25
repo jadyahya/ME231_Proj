@@ -16,20 +16,21 @@ def estInitialize():
     # x, y; the angle theta; and our favorite color. 
     x = 0
     y = 0
-    theta = 0
-    color = 'green' 
+    theta = 0.7854
+    Pm0 =np.array([[0.3,0,0],[0,0.3,0],[0,0,0.4]])
     # note that there is *absolutely no prescribed format* for this internal state.
     # You can put in it whatever you like. Probably, you'll want to keep the position
     # and angle, and probably you'll remove the color.
     internalState = [x,
                      y,
-                     theta, 
-                     color
+                     theta,
+                     Pm0 
                      ]
 
     # replace these names with yours. Delete the second name if you are working alone.
-    studentNames = ['Bart Simpson',
-                    'Lisa Simpson']
+    studentNames = ['Jad Yahya',
+                    'Sebastian Harper',
+                    'Chet Kruse']
     
     # replace this with the estimator type. Use one of the following options:
     #  'EKF' for Extended Kalman Filter
