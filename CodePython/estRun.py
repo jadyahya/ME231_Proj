@@ -61,15 +61,13 @@ def estRun(times, dt, internalStateIn, steeringAngle, pedalSpeed, measurement):
     Kk1 = Pp1@H.T@sp.linalg.inv(H@Pp1@H.T+M@sigww@M.T)
     
     if not (np.isnan(measurement[0]) or np.isnan(measurement[1])):
-        xtot = xp+Kk1@(np.array([[measurement[0]],[measurement[1]]])-np.array([[xp1+0.5*0.8*np.cos(thetap1)],[yp1+0.5*0.8*np.sin(thetap1)]]))
+        xtot = xp+Kk1@(np.array([[measurement[0]],[measurement[1]]])-np.array([[xp1+0.5*b*np.cos(thetap1)],[yp1+0.5*b*np.sin(thetap1)]]))
         Pm1 = (np.eye(5)-Kk1@H)@Pp1
         x = xtot[0][0]
         y = xtot[1][0]
         theta = xtot[2][0]
         r = xtot[3][0]
         b = xtot[4][0]
-        print(r)
-        print(b)
     else:
         # x = xm0
         # y = ym0
