@@ -16,14 +16,18 @@ def estInitialize():
     # x, y; the angle theta; and our favorite color. 
     x = 0
     y = 0
-    theta = 0.7854
-    Pm0 =np.array([[0.3,0,0],[0,0.3,0],[0,0,0.4]])
+    theta = 0.8
+    b = 0.8
+    r = 0.425
+    Pm0 =np.array([[1,0,0,0,0],[0,1,0,0,0],[0,0,0.35,0,0],[0,0,0,1.505*10**(-4),0],[0,0,0,0,2.13*10**(-3)]])
     # note that there is *absolutely no prescribed format* for this internal state.
     # You can put in it whatever you like. Probably, you'll want to keep the position
     # and angle, and probably you'll remove the color.
     internalState = [x,
                      y,
                      theta,
+                     r,
+                     b,
                      Pm0 
                      ]
 
